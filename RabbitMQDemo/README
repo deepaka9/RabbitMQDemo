@@ -1,0 +1,21 @@
+Create an ec2 instance on AWS
+sudo yum update -y
+sudo amazon-linux-extras install docker //Amazon Linux 2
+sudo yum install docker //Amazon Linux.
+sudo service docker start
+sudo usermod -a -G docker ec2-user // to add ec2-user to sudo grp
+docker info
+docker ps -a // to see processes
+
+docker pull rabbitmq:management //https://hub.docker.com/_/rabbitmq
+docker run -it -p 15672:15672 -p 5672:5672 rabbitmq:management
+docker exec <container_id> bash // to connect to docker instance
+docker logs <container_id> to see the logs
+use -d in the run command for detached daemon
+
+
+
+for rabbit mq cluster :
+
+https://medium.com/@saurabh.singh0829/how-to-create-rabbitmq-cluster-in-docker-aws-linux-4b26a31f90bc
+
